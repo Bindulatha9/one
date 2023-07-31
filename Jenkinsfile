@@ -14,6 +14,7 @@ pipeline {
     }  
     stage ('Deploy') {
       steps {
+        input message: "Approve to deploy"
         build job: 'Deploy_to_test'
       }
     }
