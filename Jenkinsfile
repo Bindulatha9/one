@@ -11,10 +11,12 @@ pipeline {
           archiveArtifacts artifacts: '**/*.war'
         }
       }
+    }  
     stage ('Deploy') {
       steps {
         build job: 'Deploy_to_test'
       }
     }
-  
+  }
+}
     
