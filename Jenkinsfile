@@ -1,6 +1,7 @@
 pipeline {
   agent any
   parameters{
+    string(name:'imagename',description: 'Enter image name: ')
     string(name:'name',description: 'Enter Container name: ')
     string(name:'port',description: 'Enter port number: ')
   }
@@ -18,7 +19,7 @@ pipeline {
     }  
     stage ('Create Image') {
       steps {
-         sh 'docker build . -t tomcatsample'
+         sh 'docker build . -t $imagename'
       }
     }
     stage ('Create container') {
