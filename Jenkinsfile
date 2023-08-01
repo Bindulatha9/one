@@ -3,6 +3,7 @@ pipeline {
   parameters{
     string(name:'containername' , description: 'Please enter container name:')
     string(name:'port' , description: 'Enter port of container: ' )
+  }
   stages {
     stage ('Build') {
       steps {
