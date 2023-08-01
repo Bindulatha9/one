@@ -12,10 +12,9 @@ pipeline {
         }
       }
     }  
-    stage ('Deploy') {
+    stage ('Create Image') {
       steps {
-        input message: "Approve to deploy"
-        build job: 'Deploy_to_test'
+         sh 'docker build . -t tomcatsample'
       }
     }
   }
