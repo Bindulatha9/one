@@ -1,9 +1,5 @@
 pipeline {
   agent any
-  parameters{
-    string(name:'containername' , description: 'Please enter container name:')
-    string(name:'port' , description: 'Enter port of container: ' )
-  }
   stages {
     stage ('Build') {
       steps {
@@ -23,9 +19,7 @@ pipeline {
     }
     stage ('Create container') {
       steps {
-        def name = "${params.containername}"
-        def port = "${params.port}"
-        sh 'docker run -it --name $name -d -p $port:8080 tomcatsample
+        sh 'docker run -it --name cont1 -d -p 8081:8080 tomcatsample
       }
     }  
   }
