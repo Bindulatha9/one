@@ -18,12 +18,12 @@ pipeline {
     }  
     stage ('Create Image') {
       steps {
-         sh 'docker build . -t tomcatsample:${env.BUILD_ID}'
+         sh 'docker build . -t tomcatsample'
       }
     }
     stage ('Create Container') {
       steps {
-        sh 'docker run -it --name $containername -d -p $port:8080 tomcatsample:${env.BUILD_ID}
+        sh 'docker run -it --name $containername -d -p $port:8080 tomcatsample
       }
     }  
   }
