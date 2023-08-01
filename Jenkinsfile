@@ -24,7 +24,7 @@ pipeline {
     }
     stage ('Create container') {
       steps {
-        sh 'docker run -it --name $name -d -p $port:8080 tomcatsample'
+        sh 'docker run -it --name $name -d -p $port:8080 $imagename'
       }
     }  
   }
