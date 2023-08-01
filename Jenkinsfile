@@ -1,7 +1,7 @@
 pipeline {
   agent any
   parameters{
-    string(name:'name',desription: 'Enter Container name: ')
+    string(name:'name',description: 'Enter Container name: ')
     string(name:'port',description: 'Enter port number: ')
   }
   stages {
