@@ -19,7 +19,7 @@ pipeline {
     }  
     stage ('Create Image') {
       steps {
-         sh 'docker build . -t $imagename'
+         sh 'docker build -t $imagename .'
       }
     }
     stage ('Create container') {
